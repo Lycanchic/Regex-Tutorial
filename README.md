@@ -81,6 +81,22 @@ This pattern use a capturing group to match the username, domain name, and top-l
 ### Bracket Expressions
 ***
 In regular expressions, brackets `[]` are used to define a character set, which is a group of characters that you want to match. The regular expression engine will match any single character from the set, so if you want to match more than one character, you needs to use a qualifier.
+
+For example, in an email address, the characters allowed in the username part of an email address are typically limited to letters, numbers, dots, underscores, percent signs, plus signs and hyphens. To match these characters in a regular expression, you can use a character set:
+```
+[1-zA-Z0-9._%+-]+
+```
+
+This pattern matches one or more occurences of characters that can appear in the username part o the email address. The `+` quantifier is used to match one or more characters, and the character set `[a-zA-Z0-9._%+-]` is used to define the set of allowed characters.
+
+Here's an example of a complete regular expression that uses character sets to match a valid email address:
+
+```
+^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$
+```
+In this pattern, two character sets are used: `[a-zA-Z0-9._%+-]+` is used to match the domain name part of the email address.
+The `{2,}` quantifier is used after the `[a-zA-Z]` character set to match two or more characters that must appear in the top-level domain of the email address.
+
 ### Character Classes
 ***
 ### The OR Operator
