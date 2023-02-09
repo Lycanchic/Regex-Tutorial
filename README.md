@@ -68,10 +68,19 @@ For example:
 ^([a-za-z0-9._%+-]+)@([a-zA-Z0-9.-]+)
 ```
 
-The following pattern uses `capturing groups` 
+The following pattern uses `capturing groups` to capture the username and domain name parts of an email address. The first capturing group `( [a-zA-Z0-9._%+-]+)` captures the username, and the second capturing group `( [a-zA-Z0-9.-]+)` captures the domain name.
+
+The follwoing is an example of a complete regular expression that uses both non-capturing and capturing groups to match a valid email address:
+
+```
+^([a-zA-Z0-9._%+-]+)@([a-zA-Z09._-]+)\.([a-zA-Z]{2,})$
+```
+
+This pattern use a capturing group to match the username, domain name, and top-level domain of an email address. The non-capturing group `(?:@)` is used to match the "@" symbol, and capturing group `([a-zA-Z]{2,})` is used to match the top-level domain.
 
 ### Bracket Expressions
 ***
+In regular expressions, brackets `[]` are used to define a character set, which is a group of characters that you want to match. The regular expression engine will match any single character from the set, so if you want to match more than one character, you needs to use a qualifier.
 ### Character Classes
 ***
 ### The OR Operator
