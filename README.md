@@ -51,6 +51,25 @@ part of the email address. The `{2,}` quantifier is used after the `[a-zA-Z]` ch
 
 ### Grouping Constructs
 ***
+In regular expressions, grouping constructs allow you to group together multiple characters or character sets into a single unit. This can be useful when you want to apply a quantifier to a group of characters, or when you want to capture a match as a single unit for later reference.
+
+There are two types of grouping constructs in regular expressions. Non capturing group and capturing groups.
+
+Non capturing group is defined using parentheses `()` and allows tou to group together characters for the purpose of applying a quatifier, qithout capturinfthe match as a single unit. For example:
+```
+(?:[a-zA-Z0-9._%+-])
+```
+
+The `?:` at the begining of the group specifies that it is a non-capturing group. This gorup matches one or morre occurences of the characters that can appear in the username part of an email address. 
+
+A capturing group is defined using parentheses `()` and allows you to group together characters and capture the match as a single unit. Captured matches can be later referenced in a replacement string, or used to extract information from a string.
+For example: 
+```
+^([a-za-z0-9._%+-]+)@([a-zA-Z0-9.-]+)
+```
+
+The following pattern uses `capturing groups` 
+
 ### Bracket Expressions
 ***
 ### Character Classes
