@@ -36,6 +36,18 @@ This pattern uses the "^" snd the "$" anchors to ensure that the entire input st
 
 ### Quantifiers
 ***
+Quantifiers can be used in regular expressions to specify the number of times a character or group of characters should be repeated when matching an email address.
+
+The following is an example of a regular expression that uses quantifiers to mtch a valid email adress:
+
+```
+^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$
+```
+
+In this pattern, the `+` quantifier is used after the 
+ ` [a-zA-Z0-9._%+-] ` character group to match one or more occurances of characters that can appear in the username
+part of the email address. The `{2,}` quantifier is used after the `[a-zA-Z]` character group to match two or more characters that must appear in the top-level domain of the email adress. 
+
 
 ### Grouping Constructs
 ***
